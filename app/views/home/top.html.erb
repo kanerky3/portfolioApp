@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hi, I'm [Your Name], a Full-Stack Developer in training.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm currently learning Ruby on Rails and building projects to showcase my skills.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="#">Project 1</a></li>
+        <li><a href="#">Project 2</a></li>
+        <li><a href="#">Project 3</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you want to get in touch, please email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+  </footer>
+</body>
+</html>
