@@ -1,0 +1,27 @@
+<div class="main posts-show">
+    <div class="container">
+        <div class="posts-show-item">
+            <div class="post-user-name">
+                <%= link_to( "/users/#{@photo.user.id}")do %>
+                    <img src="<%= "/user_images/#{@photo.user.image_name}" %>">
+                <% end %>
+                <%= link_to(@photo.user.name, "/users/#{@photo.user_id}") %>
+            </div>
+            <p>
+                <img src="<%= "/photos/#{@photo.image_name}" %>">
+            </p>
+            <p>
+                <%= @photo.content %>
+            </p>
+            <div class="post-time">
+                <%= @photo.created_at %>
+            </div>
+            <% if @photo.user_id == @current_user.id %>
+                <div class="post-menus">
+                    <%= link_to("編集", "/photos/#{@photo.id}/edit") %>
+                    <%= link_to("削除", "/photos/#{@photo.id}/destroy", data: { turbo_method: :post } ) %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

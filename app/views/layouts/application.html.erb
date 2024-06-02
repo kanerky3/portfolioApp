@@ -1,16 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PortfolioApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TweetApp</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%# font-awesome %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= javascript_importmap_tags %>
+    
   </head>
 
-  <body>
+  
+    <header>
+      <div class="header-logo">
+        
+          
+          <%= link_to("TATSUYA_KAMO", "/") %>
+        
+          
+          <%= link_to("About", "/about") %>
+        
+      </div>
+
+      <ul class="header-menus">
+        <% if @current_user %>
+        <%# ログイン時 %>
+          <li>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+          </li>
+        <% end %>
+        
+        <%# 共通 %>
+        <li>
+          <%= link_to("投稿一覧", "/photos/index") %>
+        </li>
+        <li>
+          <%= link_to("写真共有アプリとは", "/photos/about") %>
+        </li>
+
+        <% if @current_user %>
+        <%# ログイン時 %>
+          <li>
+            <%= link_to("新規投稿", "/photos/new") %>
+          </li>
+          <li>
+            <%= link_to("ユーザー一覧", "/users/index") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", data: { turbo_method: :post } ) %>
+          </li>
+        <% else %>
+        <%# ログアウト時 %>
+
+          <li>
+            <%= link_to("新規登録", "/signup") %>
+          </li>
+          <li>
+            <%= link_to("ログイン", "/login") %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <body>
     <%= yield %>
   </body>
 </html>

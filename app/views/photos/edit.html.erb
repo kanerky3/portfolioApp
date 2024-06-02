@@ -1,0 +1,28 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集フォーム</h1>
+    <%= form_tag("/photos/#{@photo.id}/update", {multipart: true}) do %>
+      <div class="form">
+        <div class="form-body">
+          <% @photo.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+            <p>写真</p>
+            <input name="image" type="file">
+            
+            <div id="image-preview">
+            <% if @photo.image_name.present? %>
+              <img src="<%= "/photos/#{@photo.image_name}" %>" alt="Current Photo" style="max-width: 300px;">
+            <% end %>
+          </div>
+
+            <p>説明</p>
+            <textarea name="content"><%= @photo.content %></textarea>
+          <input type="submit" value="保存">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

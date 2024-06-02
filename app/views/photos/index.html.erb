@@ -1,0 +1,24 @@
+<div class="main posts-index">
+    <div class="container">
+        <% @photos.each do |photo| %>
+            <div class="posts-index-item">
+                <div class="post-left">
+                    <%= link_to( "/users/#{photo.user.id}")do %>
+                        <img src="<%= "/user_images/#{photo.user.image_name}" %>">
+                    <% end %>
+                </div>
+                <div class="post-right">
+                    <div class="post-user-name">
+                        <%= link_to(photo.user.name, "/users/#{photo.user.id}") %>
+                    </div>
+                <%= link_to( "/photos/#{photo.id}")do %>
+                    <img src="<%= "/photos/#{photo.image_name}" %>">
+                <% end %>
+            <p>
+                <%= photo.content %>
+            </p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
