@@ -1,4 +1,4 @@
-<div class="main posts-new">
+<div class="main photos-new">
     <div class="container">
         <h1 class="form-heading">投稿フォーム</h1>
         <%= form_tag("/photos/create", {multipart: true}) do %>
@@ -10,7 +10,12 @@
                         </div>
                     <% end %>
                     <p>写真</p>
-                    <input name="image" type="file">
+                    <input name="image" type="file" id="image-input">
+                    <div id="image-preview">
+                        <% if @photo.image_name %>
+                            <img src="<%= "/photos/#{@photo.image_name}" %>" alt="Current Photo" style="max-width: 300px;" >
+                        <% end %>
+                    </div>
                     <p>説明</p>
                     <textarea name="content"><%= @photo.content %></textarea>
                     <input type="submit" value="投稿">

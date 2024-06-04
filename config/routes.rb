@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   post "photos/:id/destroy" => "photos#destroy"
   post "photos/:id/update" => "photos#update"
 
+  post "likes/:photo_id/create" => "likes#create"
+  post "likes/:photo_id/destroy" => "likes#destroy"
+
 
 
 

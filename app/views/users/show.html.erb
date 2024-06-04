@@ -8,6 +8,24 @@
                 <%= link_to("編集", "/users/#{@user.id}/edit") %>
             <% end %>
         </div>
+        <% @user.photos.each do |photo| %>
+      <div class="photos-index-item">
+        <div class="photo-left">
+          <img src="<%= "/user_images/#{photo.user.image_name}" %>">
+        </div>
+        <div class="photo-right">
+          <div class="photo-user-name">
+            <%= link_to(photo.user.name, "/users/#{photo.user.id}") %>
+          </div>
+          <%= link_to( "/photos/#{photo.id}")do %>
+                    <img src="<%= "/photos/#{photo.image_name}" %>">
+                <% end %>
+                <p>
+                <%= photo.content %>
+            </p>
+        </div>
+      </div>
+    <% end %>
     
     </div>
 </div>

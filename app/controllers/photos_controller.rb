@@ -1,4 +1,9 @@
 class PhotosController < ApplicationController
+  # ログインできていない場合
+  before_action :authenticate_user
+  # ログインできている場合
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
   def index
     # 投稿一覧
     @photos = Photo.all.order(created_at: :desc)
@@ -16,6 +21,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find_by(id: params[:id])
+    @likes_count = Like.where(photo_id: @photo.id).count
   end
 
   def create
