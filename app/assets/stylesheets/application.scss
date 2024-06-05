@@ -77,10 +77,14 @@
   
   /* ヘッダー ================================ */
   header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
     height: 64px;
-    position: absolute;
-    z-index: 1;
     width: 100%;
+    background-color: #2d3133;
+    float: left;
   }
   
   .header-logo {
@@ -89,13 +93,46 @@
     color: white;
     font-size: 22px;
     line-height: 64px;
+    a{
+      color: white;
+      font-size: 22px;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+    a:hover{
+      background: linear-gradient(90deg, #58c6ff 0%, #207de7 40%, #ff3bef 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      
+    }
+
   }
   
-  .header-logo a{
-    color: white;
-    font-size: 22px;
-  }
-  
+  .header-menus li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.header-menus li.current a,
+.header-menus li a:hover{
+  color:#0481A2;
+}
+
+.header-menus li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#0481A2;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
   .header-menus {
     float: right;
     padding-right: 20px;
@@ -106,7 +143,8 @@
     line-height: 64px;
     font-size: 13px;
     color: white;
-    padding-left: 15px;
+    padding-left: 20px;
+    
   }
   
   .header-menus a {
@@ -126,39 +164,6 @@
     color: white;
     margin: 0;
     font-size: 13px;
-  }
-  
-  /* top ================================ */
-  .top-main {
-    padding: 200px 0 100px;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    color: white;
-    background-color: #b1b2ae;
-    background-repeat: no-repeat;
-    background-position: center 50%;
-    background-size: cover;
-    background-image: url("/top.jpg");
-  }
-  
-  .top-message {
-    position: relative;
-  }
-  
-  .top-main h2 {
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    margin-bottom: 20px;
-  }
-  
-  .top-main p {
-    font-size: 24px;
   }
   
   /* about ================================ */

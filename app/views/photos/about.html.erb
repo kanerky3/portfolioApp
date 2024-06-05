@@ -1,5 +1,13 @@
-<div class="main photos-index">
-    <div class="container">
-        アバウトです。
+<div class="photo_about_main photos-index">
+  <div class="container">
+    <div class="background-blur"></div>
+    <div class="content">
+    <h1>Welcome to My Photo Application</h1>
+    <p>
+      こちらは、私が自作したアプリケーションになります。<br>Progateでの学習を通し、自分なりのアウトプットも兼ね、<br>インスタグラムのようなアプリケーションを作成しました。<br>こちらのソースコードにつきましてはGitHubにて公開しています。<br>併せてご覧ください。
+    </p>
+    <a href="https://github.com/yourusername/yourrepository" target="_blank" class="github-link">GitHubでソースコードを見る</a>
+    <%= link_to("投稿一覧", "/photos/index", class: "photos-link") %>
     </div>
+  </div>
 </div>

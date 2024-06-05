@@ -1,6 +1,7 @@
 <div class="main photos-index">
     <div class="container">
         <% @photos.each do |photo| %>
+        <% @likes_count = Like.where(photo_id: photo.id).count %>
             <div class="photos-index-item">
                 <div class="photo-left">
                     <%= link_to( "/users/#{photo.user.id}")do %>
@@ -17,7 +18,20 @@
             <p>
                 <%= photo.content %>
             </p>
+            <%# いいね機能 %>
+            <% if Like.find_by(user_id: @current_user.id, photo_id: photo.id) %>
+                <%= link_to("/likes/#{photo.id}/destroy", data: { turbo_method: :post }) do %>
+                    <span class="fa fa-heart liked-btn"></span>
+                <% end %>
+            <% else %>
+                <%= link_to("/likes/#{photo.id}/create", data: { turbo_method: :post }) do %>
+                    <span class="fa fa-heart unliked-btn"></span>
+                <% end %>
+            <% end %>
+            <%# ハートの数表示 %>
+            <%= @likes_count %>
                 </div>
+
             </div>
         <% end %>
     </div>

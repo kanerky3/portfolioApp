@@ -14,12 +14,12 @@
   </head>
 
   
-    <header>
+    <header class="Header">
       <div class="header-logo">
         
-          
+          <span class="header-name">
           <%= link_to("TATSUYA_KAMO", "/") %>
-        
+          </span>
           
           <%= link_to("About", "/about") %>
         
@@ -50,7 +50,9 @@
             <%= link_to("ユーザー一覧", "/users/index") %>
           </li>
           <li>
+            <span class ="logout_btn">
             <%= link_to("ログアウト", "/logout", data: { turbo_method: :post } ) %>
+            </span>
           </li>
         <% else %>
         <%# ログアウト時 %>
