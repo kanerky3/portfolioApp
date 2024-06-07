@@ -1,0 +1,173 @@
+.top_about_img {
+    padding: 200px 0 100px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    background-color: #292929;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    background-size: cover;
+    background-image: url("/top_about.jpg");
+    filter: blur(2px);
+  }
+  
+  .about-main {
+    padding: 220px 20px 100px; /* Adjusted for the blurred image */
+    text-align: center;
+    background-color: #f9f9f9;
+    
+  
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #1b1b1b;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      opacity: 0.9;
+  
+      .about {
+        h1 {
+          font-size: 2em;
+          margin-bottom: 20px;
+          color: #ffffff;
+        }
+  
+        .name {
+          font-size: 1.5em;
+          margin-bottom: 70px;
+        }
+  
+        .profile-image {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          margin: 20px 0;
+        }
+  
+        .biography,
+        .graduation-research,
+        .skill,
+        .hobby {
+          margin-bottom: 50px;
+          text-align: left;
+          .small-cont{
+            font-size: 1em;
+            color: #d2d2d2;
+          }
+  
+          h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #eeeeee;
+          }
+  
+          p, div {
+            font-size: 1.2em;
+            color: #dddddd;
+          }
+  
+          ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style-type: disc;
+  
+            li {
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .skill {
+            div{
+                margin-bottom: 30px;
+            }
+        }
+        .hobby{
+            div{
+                margin-bottom: 30px;
+            }
+        }
+      }
+    }
+  }
+  
+  /* メディアクエリ */
+  @media (max-width: 768px) {
+    .about-main {
+      padding: 150px 10px 80px;
+  
+      .container {
+        padding: 15px;
+  
+        .about {
+          h1 {
+            font-size: 1.5em;
+          }
+  
+          .name {
+            font-size: 1.2em;
+          }
+  
+          .profile-image {
+            width: 100px;
+            height: 100px;
+          }
+  
+          .biography,
+          .graduation-research,
+          .skill,
+          .hobby {
+            h2 {
+              font-size: 1.2em;
+            }
+  
+            p, div {
+              font-size: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-main {
+      padding: 120px 10px 60px;
+  
+      .container {
+        padding: 10px;
+  
+        .about {
+          h1 {
+            font-size: 1.2em;
+          }
+  
+          .name {
+            font-size: 1em;
+          }
+  
+          .profile-image {
+            width: 80px;
+            height: 80px;
+          }
+  
+          .biography,
+          .graduation-research,
+          .skill,
+          .hobby {
+            h2 {
+              font-size: 1em;
+            }
+  
+            p, div {
+              font-size: 0.9em;
+            }
+          }
+        }
+      }
+    }
+  }

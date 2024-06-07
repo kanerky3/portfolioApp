@@ -85,6 +85,7 @@
     width: 100%;
     background-color: #2d3133;
     float: left;
+    opacity: 0.8;
   }
   
   .header-logo {
@@ -204,6 +205,22 @@
   
   .form-body {
     padding: 30px;
+    .photos-link{
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #ffffff;
+      background-color: #5259dc;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 8px;
+      margin-right: 50px;
+      
+    }
+    .photos-link:hover{
+      background-color: #3f4395;
+    }
   }
   
   .form-error {
@@ -238,6 +255,9 @@
     margin-bottom: 0;
     float: right;
   }
+  .form input[type="submit"]:hover{
+    background-color: #3e8480;
+  }
   
   .form-body:after {
     content: '';
@@ -247,15 +267,16 @@
   
   /* フラッシュ ================================ */
   .flash {
+    position: fixed;
     padding: 10px 0;
     color: white;
-    background: rgb(251, 170, 88);
+    background: #458cb0;
     text-align: center;
-    position: absolute;
     top: 64px;
     z-index: 10;
     width: 100%;
     border-radius: 0 0 2px 2px;
     font-size: 14px;
+    opacity: 0.8;
   }
   
