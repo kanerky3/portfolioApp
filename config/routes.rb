@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  resources :home
+  root 'home#top'
   # Home
   get 'home/top'
 
@@ -34,7 +35,6 @@ Rails.application.routes.draw do
 
 
 
-  # ?
   get "up" => "rails/health#show", as: :rails_health_check
 
 end
