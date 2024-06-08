@@ -57,6 +57,20 @@
           .small-cont{
             font-size: 1em;
             color: #d2d2d2;
+            
+          }
+          .btn-div{
+            text-align: center;
+            margin-top: 20px;
+            .btn{
+                background-color: #5259dc;
+                color:#ffffff;
+                padding: 10px 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .btn:hover{
+                background-color: #3f4395;
+            }
           }
   
           h2 {
@@ -80,6 +94,10 @@
               margin-bottom: 5px;
             }
           }
+        }
+        .link{
+            color:#2436fa;
+            font-size: 1em;
         }
         .skill {
             div{
